@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class EstateProperty(models.Model):
@@ -29,6 +29,7 @@ class EstateProperty(models.Model):
     garage = fields.Boolean()
     garden = fields.Boolean()
     garden_area = fields.Integer()
+    total_area = fields.Integer(compute="_compute_total_area")
     garden_orientation = fields.Selection(
         selection=[
             ("north", "North"),
@@ -50,3 +51,8 @@ class EstateProperty(models.Model):
         copy=False,
         default="new",
     )
+
+    @api.depends("living_area", "garden_area")
+    def _compute_total_area(self):
+        for record in self:
+            record.total_area = record.living_area + record.garden_area
