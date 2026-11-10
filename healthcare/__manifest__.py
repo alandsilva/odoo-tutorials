@@ -1,0 +1,25 @@
+{
+    'name': "Healthcare",
+    'summary': "Book appointments between patients and doctors",
+    'version': '0.1',
+    'category': 'Services',
+    'depends': ['base', 'web'],
+    'data': [
+        'security/healthcare_security.xml',
+        'security/ir.access.csv',
+        'data/healthcare_data.xml',
+        'views/healthcare_appointment_views.xml',
+        'views/healthcare_doctor_views.xml',
+        'views/healthcare_schedule_views.xml',
+        'views/healthcare_specialty_views.xml',
+        'wizard/healthcare_booking_wizard_views.xml',
+        'views/healthcare_menus.xml',
+    ],
+    'demo': [
+        'demo/healthcare_demo.xml',
+    ],
+    'application': True,
+    'installable': True,
+    'author': "Alan Da Silva",
+    'license': 'LGPL-3',
+}

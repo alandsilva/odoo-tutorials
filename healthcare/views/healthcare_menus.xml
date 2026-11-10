@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="healthcare_menu_root" name="Healthcare" sequence="40"
+              groups="group_healthcare_patient" web_icon="healthcare,static/description/icon.png">
+        <menuitem id="healthcare_appointment_menu" name="Appointments" sequence="10">
+            <menuitem id="healthcare_appointment_menu_action" name="Appointments"
+                      action="healthcare_appointment_action" sequence="10"/>
+            <menuitem id="healthcare_booking_menu_action" name="Book an Appointment"
+                      action="healthcare_booking_wizard_action" sequence="20"/>
+        </menuitem>
+        <menuitem id="healthcare_doctor_menu_action" name="Doctors" action="healthcare_doctor_action" sequence="20"/>
+        <menuitem id="healthcare_patient_menu_action" name="Patients" action="healthcare_patient_action"
+                  sequence="30" groups="group_healthcare_doctor"/>
+        <menuitem id="healthcare_config_menu" name="Configuration" sequence="100" groups="group_healthcare_doctor">
+            <menuitem id="healthcare_schedule_menu_action" name="Availabilities" action="healthcare_schedule_action"
+                      sequence="10"/>
+            <menuitem id="healthcare_specialty_menu_action" name="Specialties" action="healthcare_specialty_action"
+                      sequence="20" groups="group_healthcare_manager"/>
+        </menuitem>
+    </menuitem>
+</odoo>

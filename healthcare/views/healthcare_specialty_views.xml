@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="healthcare_specialty_view_list" model="ir.ui.view">
+        <field name="name">healthcare.specialty.list</field>
+        <field name="model">healthcare.specialty</field>
+        <field name="arch" type="xml">
+            <list string="Specialties" editable="bottom">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="healthcare_specialty_action" model="ir.actions.act_window">
+        <field name="name">Specialties</field>
+        <field name="res_model">healthcare.specialty</field>
+        <field name="view_mode">list</field>
+    </record>
+</odoo>

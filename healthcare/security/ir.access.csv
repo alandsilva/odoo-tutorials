@@ -1,0 +1,11 @@
+id,name,model_id,group_id/id,operation,domain
+access_healthcare_specialty_patient,Healthcare Patient: read specialties,healthcare.specialty,healthcare.group_healthcare_patient,r,
+access_healthcare_specialty_manager,Healthcare Administrator: manage specialties,healthcare.specialty,healthcare.group_healthcare_manager,crud,
+access_healthcare_schedule_patient,Healthcare Patient: read availabilities,healthcare.schedule,healthcare.group_healthcare_patient,r,
+access_healthcare_schedule_doctor,Healthcare Doctor: manage own availabilities,healthcare.schedule,healthcare.group_healthcare_doctor,cud,"[('doctor_id', '=', user.id)]"
+access_healthcare_schedule_manager,Healthcare Administrator: manage all availabilities,healthcare.schedule,healthcare.group_healthcare_manager,crud,
+access_healthcare_appointment_patient,Healthcare Patient: own appointments,healthcare.appointment,healthcare.group_healthcare_patient,cru,"[('patient_id', '=', user.id)]"
+access_healthcare_appointment_doctor,Healthcare Doctor: own consultations,healthcare.appointment,healthcare.group_healthcare_doctor,crud,"['|', ('doctor_id', '=', user.id), ('patient_id', '=', user.id)]"
+access_healthcare_appointment_manager,Healthcare Administrator: all appointments,healthcare.appointment,healthcare.group_healthcare_manager,crud,
+access_healthcare_booking_wizard_patient,Healthcare Patient: booking wizard,healthcare.booking.wizard,healthcare.group_healthcare_patient,crud,
+access_healthcare_booking_wizard_slot_patient,Healthcare Patient: booking slots,healthcare.booking.wizard.slot,healthcare.group_healthcare_patient,crud,
