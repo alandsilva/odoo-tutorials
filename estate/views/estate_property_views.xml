@@ -94,6 +94,7 @@
             <search string="Search Properties">
                 <field name="name" string="Title"/>
                 <field name="property_type_id"/>
+                <field name="living_area" filter_domain="[('living_area', '>=', self)]"/>
                 <filter string="Available" name="available"
                         domain="[('state', 'in', ['new', 'offer_received'])]"/>
                 <group>
@@ -108,5 +109,6 @@
         <field name="name">Properties</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_available': True}</field>
     </record>
 </odoo>
